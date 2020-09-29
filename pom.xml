@@ -44,18 +44,7 @@
 			<artifactId>assertj-core</artifactId>
 			<version>1.7.0</version>
 		</dependency>
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-core</artifactId>
-            <version>2.1.13</version>
-        </dependency>
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-junit</artifactId>
-            <version>2.1.13</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>

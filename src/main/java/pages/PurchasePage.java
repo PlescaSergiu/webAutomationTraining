@@ -1,32 +1,24 @@
 package pages;
 
-import net.serenitybdd.core.pages.PageObject;
+import net.serenitybdd.core.annotations.findby.FindBy;
+import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-
-import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.assertThat;
 
 public class PurchasePage extends PageObject {
 
+
     @FindBy(css = "h2")
-    private WebElement confirmationText;
+    private WebElement reservationPageText;
 
-    @FindBy(css = ".container p:nth-of-type(3)")
-    private WebElement flightPrice;
+    @FindBy(css = "p:nth-child(4)")
+    private WebElement getFlightPrice;
 
-    public void checkIfFlightIsReserved() {
-        assertEquals("Confirmation message is not displayed",
-                confirmationText.getText(),
-                "Your flight from TLV to SFO has been reserved."
-        );
+
+    public String getTitle(){
+        return reservationPageText.getText();
     }
 
-    public void checkIfFlightPriceAreTheSame(String price) {
-        assertEquals("Prices are not equal",price, getParsedPrice());
-    }
-
-    private String getParsedPrice() {
-        return flightPrice.getText().split("\\s+")[1];
+    public String getFlightPrice() {
+        return getFlightPrice.getText();
     }
 }
