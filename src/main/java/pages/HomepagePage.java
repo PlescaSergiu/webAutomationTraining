@@ -1,15 +1,18 @@
 package pages;
 
-import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.PageObject;
 
-public class HomepagePage extends PageObject {
+public class HomepagePage extends BasePage {
 
     @FindBy(css = "input")
     private WebElement findFlightsButton;
+
+    public HomepagePage(WebDriver driver) {
+        super(driver);
+    }
 
     public void clickOnFindFlightsButton() {
         findFlightsButton.click();

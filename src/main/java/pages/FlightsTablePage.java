@@ -1,11 +1,11 @@
 package pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.PageObject;
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class FlightsTablePage extends PageObject {
+public class FlightsTablePage extends BasePage {
 
     @FindBy(css = ".container .table")
     private WebElement flightsTable;
@@ -16,6 +16,10 @@ public class FlightsTablePage extends PageObject {
 
     @FindBy(css = "tr:nth-child(1) > td:nth-child(7)")
     private WebElement flightPrice;
+
+    public FlightsTablePage(WebDriver driver) {
+        super(driver);
+    }
 
     public void assertFlightsTableIsDisplayed() {
         Assert.assertTrue(flightsTable.isDisplayed());

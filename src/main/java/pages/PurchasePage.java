@@ -1,11 +1,10 @@
 package pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
-import net.thucydides.core.pages.PageObject;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class PurchasePage extends PageObject {
-
+public class PurchasePage extends BasePage {
 
     @FindBy(css = "h2")
     private WebElement reservationPageText;
@@ -13,8 +12,11 @@ public class PurchasePage extends PageObject {
     @FindBy(css = "p:nth-child(4)")
     private WebElement getFlightPrice;
 
+    public PurchasePage(WebDriver driver) {
+        super(driver);
+    }
 
-    public String getTitle(){
+    public String getTitle() {
         return reservationPageText.getText();
     }
 

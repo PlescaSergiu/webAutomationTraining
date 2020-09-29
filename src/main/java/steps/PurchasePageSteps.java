@@ -18,7 +18,6 @@ public class PurchasePageSteps extends ScenarioSteps {
     @Step
     public void verifyTitle(String title) {
         assert (purchasePage.getTitle().contains(title));
-        Assert.assertTrue("dasda", purchasePage.getTitle().contains());
     }
 
     @Step("Get flight from purchase page")
